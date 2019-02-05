@@ -76,6 +76,7 @@ jobs:
   pool:
     vmImage: 'vs2017-win2016'
 
-  - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
-    condition: and(succeeded(), ne(variables['Build.Reason'],'PullRequest'))
-    displayName: 'Component Detection'
+  steps:
+    - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
+      condition: and(succeeded(), ne(variables['Build.Reason'],'PullRequest'))
+      displayName: 'Component Detection'
