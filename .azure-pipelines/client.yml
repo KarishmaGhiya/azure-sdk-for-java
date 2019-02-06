@@ -1,6 +1,5 @@
 # External variables Settable at queue time:
-# "pomFile" : "pom.client.xml".   This is the project object model file for Maven.
-
+# "pomFile" : "pom.client.xml".  
 trigger:
 - master
 
