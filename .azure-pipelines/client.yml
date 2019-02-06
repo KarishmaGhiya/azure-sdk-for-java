@@ -1,6 +1,5 @@
 # External variables Settable at queue time:
-# "pomFile" : "pom.client.xml".   This is the project object model file for Maven.
-
+# "pomFile" : "pom.client.xml".  
 trigger:
 - master
 
@@ -43,8 +42,8 @@ jobs:
 
   steps:
     - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
-      #condition: and(succeeded(), ne(variables['Build.Reason'],'PullRequest'))
       condition: always()
+      #condition: and(succeeded(), ne(variables['Build.Reason'],'PullRequest'))
       displayName: 'Component Detection'
 
 - job: 'Test'
